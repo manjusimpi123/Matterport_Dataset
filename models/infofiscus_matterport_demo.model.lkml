@@ -26,13 +26,13 @@ explore: fact_gljournals {
   }
   join: dim_date {
     type: left_outer
-    relationship: many_to_many
+    relationship: many_to_one
     sql_on: ${fact_gljournals.posted_date_key} = ${dim_date.date_pkey} ;;
   }
 
   join:dim_department  {
     type:left_outer
-    relationship: many_to_many
+    relationship: many_to_one
     sql_on: ${fact_gljournals.d_dept_key} = ${dim_department.d_dept_key} ;;
   }
 }

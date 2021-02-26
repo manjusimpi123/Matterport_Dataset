@@ -119,6 +119,7 @@ view: fact_gljournals {
 
   dimension: gl_journal_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."GL_JOURNAL_KEY" ;;
   }
 
