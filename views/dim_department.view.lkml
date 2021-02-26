@@ -29,6 +29,7 @@ view: dim_department {
 
   dimension: d_dept_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_DEPT_KEY" ;;
   }
 

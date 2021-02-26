@@ -24,8 +24,10 @@ view: dim_accountcategories {
 
   dimension: d_accountcategories_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_ACCOUNTCATEGORIES_KEY" ;;
   }
+
 
   measure: count {
     type: count

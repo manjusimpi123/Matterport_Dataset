@@ -39,6 +39,7 @@ view: dim_account {
 
   dimension: d_account_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_ACCOUNT_KEY" ;;
   }
 

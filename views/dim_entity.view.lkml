@@ -29,6 +29,7 @@ view: dim_entity {
 
   dimension: d_entity_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_ENTITY_KEY" ;;
   }
 

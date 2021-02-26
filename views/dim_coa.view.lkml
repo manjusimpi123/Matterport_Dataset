@@ -74,6 +74,7 @@ view: dim_coa {
 
   dimension: d_coa_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_COA_KEY" ;;
   }
 

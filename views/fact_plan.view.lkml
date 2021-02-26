@@ -4,6 +4,7 @@ view: fact_plan {
 
   dimension: account_code_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."ACCOUNT_CODE_KEY" ;;
   }
 

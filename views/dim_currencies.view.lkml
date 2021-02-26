@@ -14,6 +14,7 @@ view: dim_currencies {
 
   dimension: d_currency_key {
     type: number
+    primary_key: yes
     sql: ${TABLE}."D_CURRENCY_KEY" ;;
   }
 

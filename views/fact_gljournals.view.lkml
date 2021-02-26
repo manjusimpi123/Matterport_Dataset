@@ -334,6 +334,8 @@ view: fact_gljournals {
           else ${net_amount}
           END;;
   }
+
+
   measure: Actuals {
     type: sum
     sql: ${Dim_Actual} ;;
