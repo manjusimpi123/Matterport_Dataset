@@ -1,6 +1,7 @@
 connection: "infoficus_matterport_demo"
+include: "/views/**/*.view"
 
-label: "Infofiscus Matterport Finance Model"
+label: "Infofiscus Finance"
 
 datagroup: infofiscus_matterport_demo_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
