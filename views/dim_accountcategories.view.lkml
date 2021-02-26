@@ -27,7 +27,47 @@ view: dim_accountcategories {
     primary_key: yes
     sql: ${TABLE}."D_ACCOUNTCATEGORIES_KEY" ;;
   }
+  dimension: Dim_Revenue{
+    type:number
+    sql:
+       CASE WHEN ${account_category}='Sales'
+       THEN ${fact_gljournals.net_amount}*-1
+       END ;;
+  }
+  dimension: Dim_operating_expense{
+    type:number
+    sql:
+      case when ${account_category}='Operational Expenses'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+  dimension: Dim_Expense{
+    type:number
+    sql:
+      case when ${category_type}='Income/Expense'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
 
+  dimension: Dim_cost_of_goods_sold{
+    type:number
+    sql:
+      case when ${account_category}='COGS'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+
+  dimension: Dim_assets{
+    type:number
+    sql:
+      case when ${account_category}='Other Assets'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+
+  dimension: Dim_Liabilities{
+    type:number
+    sql:
+      case when ${category_type}='Liabilties'
+      THEN ${fact_gljournals.net_amount}*-1
+      END;;
+  }
 
   measure: count {
     type: count
