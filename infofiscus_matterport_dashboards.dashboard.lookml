@@ -75,7 +75,7 @@
     hide_totals: false
     hide_row_totals: false
     size_to_fit: true
-    table_theme: white
+    table_theme: black
     enable_conditional_formatting: false
     header_text_alignment: left
     header_font_size: 12
