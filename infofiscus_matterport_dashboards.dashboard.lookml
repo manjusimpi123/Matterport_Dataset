@@ -1,5 +1,5 @@
 - dashboard: infofiscus_matterport_dashboards
-  title: Infofiscus Matterport Dashboards
+  title: Infofiscus Dashboards
   layout: newspaper
   preferred_viewer: dashboards
   tile_size: 100
