@@ -1,5 +1,6 @@
 connection: "infoficus_matterport_demo"
 include: "/views/**/*.view"
+include: "/**/*.dashboard"
 
 label: "Infofiscus Finance"
 
