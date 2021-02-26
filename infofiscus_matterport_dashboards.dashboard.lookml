@@ -14,7 +14,7 @@
   elements:
   - name: Gross Profit
     title: Gross Profit
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: looker_donut_multiples
     fields: [fact_gljournals.gross_profit, dim_date.month_name]

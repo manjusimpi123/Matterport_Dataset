@@ -326,4 +326,108 @@ view: fact_gljournals {
     type: count
     drill_fields: [company_name, originating_master_name]
   }
+
+  dimension:Dim_Actual {
+    type:number
+    sql:case when ${net_amount}<0
+          THEN ${net_amount}*-1
+          else ${net_amount}
+          END;;
+  }
+  measure: Actuals {
+    type: sum
+    sql: ${Dim_Actual} ;;
+    # value_format: "$0.00, K"
+  }
+  measure: Operating_Expense {
+    type: sum
+    sql: ${dim_accountcategories.Dim_operating_expense} ;;
+    # value_format: "$0.00, K"
+  }
+  measure: Revenue {
+    type: sum
+    sql: ${dim_accountcategories.Dim_Revenue};;
+
+    #value_format: "0.000"
+
+  }
+  measure: expense {
+    type: sum
+    sql: ${dim_accountcategories.Dim_Expense} ;;
+    # value_format: "$0.00, K"
+  }
+  measure: cost_of_goods_sold {
+    type: sum
+    sql: ${dim_accountcategories.Dim_cost_of_goods_sold} ;;
+    #value_format: "$0.00, K"
+  }
+
+  measure: assets
+  {
+    type: sum
+    sql: ${dim_accountcategories.Dim_assets} ;;
+    #value_format: "$0.00, K"
+  }
+
+  measure: Liabilities
+  {
+    type: sum
+    sql: ${dim_accountcategories.Dim_Liabilities} ;;
+    #value_format: "$0.00, K"
+  }
+  measure:Net_Profit
+  {
+    type: number
+    sql: ${Revenue} - ${expense};;
+  }
+
+  measure:Equity
+  {
+    type: number
+    sql: ${assets} - ${Liabilities};;
+  }
+  measure:Return_on_Equity_Ratio
+  {
+    type: number
+    sql: ${Net_Profit} / ${Equity};;
+    value_format: "0.00"
+  }
+
+  measure:operating_profit
+  {
+    type: number
+    sql: ${Revenue} - ${cost_of_goods_sold} -${Operating_Expense};;
+  }
+  measure:Total_operating_profit
+  {
+    type: number
+    sql: ${Revenue} - ${operating_profit};;
+  }
+  measure:operating_Percent
+  {
+    type: number
+    sql:  ${operating_profit} / ${Revenue} * 100;;
+  }
+  measure:gross_profit
+  {
+    type: number
+    sql: ${Revenue} - ${cost_of_goods_sold};;
+  }
+  measure:net_percent
+  {
+    type: number
+    sql: ${Net_Profit} / ${Revenue} * 100;;
+  }
+
+  measure:Net_amount
+  {
+    type: sum
+    sql: ${net_amount};;
+  }
+  measure:net_working_capital
+  {
+    type: number
+    sql: ${assets} - ${Liabilities};;
+  }
+
 }
