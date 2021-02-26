@@ -115,7 +115,7 @@
     height: 8
   - title: Income
     name: Income
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: single_value
     fields: [fact_gljournals.Revenue, fact_gljournals.expense]
@@ -207,7 +207,7 @@
     height: 5
   - title: Operating Profit
     name: Operating Profit
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: single_value
     fields: [fact_gljournals.operating_profit, dim_date.month_name, dim_date.month_num_in_year,
@@ -299,7 +299,7 @@
     height: 5
   - title: Return on Equity Ratio
     name: Return on Equity Ratio
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: looker_area
     fields: [fact_gljournals.Return_on_Equity_Ratio, dim_date.month_name]
@@ -384,7 +384,7 @@
     height: 8
   - title: Operating Expense
     name: Operating Expense
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: looker_area
     fields: [fact_gljournals.Operating_Expense, dim_date.month_name, dim_date.month_num_in_year]
@@ -461,7 +461,7 @@
     height: 8
   - title: Expense
     name: Expense
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: looker_bar
     fields: [fact_gljournals.expense, dim_date.month_name, dim_date.month_num_in_year]
@@ -553,7 +553,7 @@
     height: 8
   - title: Net Working Capital
     name: Net Working Capital
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: single_value
     fields: [fact_gljournals.net_working_capital, dim_date.month_name, dim_date.month_num_in_year,
@@ -637,7 +637,7 @@
     height: 5
   - title: Net Profit
     name: Net Profit
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: looker_line
     fields: [fact_gljournals.Net_Profit, dim_date.month_name, dim_date.month_num_in_year]
@@ -789,7 +789,7 @@
     height: 8
   - title: Operating Margin ratio
     name: Operating Margin ratio
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: marketplace_viz_multiple_value::multiple_value-marketplace
     fields: [fact_gljournals.operating_profit, fact_gljournals.Total_operating_profit,
@@ -898,7 +898,7 @@
     height: 5
   - title: Net Profit Margin Ratio
     name: Net Profit Margin Ratio
-    model: infofiscus-income-expenses
+    model: infofiscus_matterport_demo
     explore: fact_gljournals
     type: marketplace_viz_multiple_value::multiple_value-marketplace
     fields: [fact_gljournals.Net_Profit, fact_gljournals.net_percent]
