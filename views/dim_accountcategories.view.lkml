@@ -65,7 +65,7 @@ view: dim_accountcategories {
     type:number
     sql:
       case when ${category_type}='Liabilties'
-      THEN ${fact_gljournals.net_amount}*-1
+      THEN ${fact_gljournals.net_amount}
       END;;
   }
 
