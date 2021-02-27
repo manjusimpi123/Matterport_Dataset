@@ -43,7 +43,7 @@ view: dim_accountcategories {
   dimension: Dim_Expense{
     type:number
     sql:
-      case when ${account_category}='Other Expense' and ${account_category}='Operational Expenses'
+      case when ${account_category}='Other Expense' or  ${account_category}='Operational Expenses'
       THEN ${fact_gljournals.net_amount} END;;
   }
 
