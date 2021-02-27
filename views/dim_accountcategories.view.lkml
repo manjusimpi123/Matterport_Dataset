@@ -30,7 +30,7 @@ view: dim_accountcategories {
   dimension: Dim_Revenue{
     type:number
     sql:
-       CASE WHEN ${account_category}='Sales'
+       CASE WHEN ${account_category}='Sales' or  ${account_category}= 'Other Income'
        THEN ${fact_gljournals.net_amount}
        END ;;
   }
