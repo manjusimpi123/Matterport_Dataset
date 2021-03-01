@@ -86,14 +86,14 @@ view: bs_gl_journals_aggregation {
   dimension:Dim_Cash{
     type:number
     sql:
-      case when ${hier_name} ='1008 - Cash on Hand'
+      case when ${hier3_name} ='Bank'
       THEN ${net_amount}
       END;;
   }
   dimension:Dim_Fixed_Asset{
     type:number
     sql:
-      case when ${hier2_name}='Fixed Asset'
+      case when ${hier3_name}='Fixed Asset'
       THEN ${net_amount}
       END;;
   }
@@ -101,7 +101,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier_name}='1100 - Accounts Receivable'
+      case when ${hier2_name}='1200000 - Accounts Receivable'
       THEN ${net_amount}
       END;;
   }
@@ -110,7 +110,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier2_name} ='Other Current Liability'
+      case when ${hier4_name} ='Liability'
       THEN ${net_amount}
       END;;
   }
@@ -119,7 +119,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier3_name}='Other Assets'
+      case when ${hier5_name}='Assets'
       THEN ${net_amount}
       END;;
   }
@@ -128,7 +128,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier2_name}='Accounts Payable'
+      case when ${hier2_name}='2000000 - Accounts Payable Trade'
       THEN ${net_amount}
       END;;
   }
@@ -136,7 +136,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier3_name}='Current Assets'
+      case when ${hier4_name}='Current Asset'
       THEN ${net_amount}
       END;;
   }
@@ -152,7 +152,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier3_name}='Current Liabilities'
+      case when ${hier4_name}='Current Liability'
       THEN ${net_amount}*-1
       END;;
 
