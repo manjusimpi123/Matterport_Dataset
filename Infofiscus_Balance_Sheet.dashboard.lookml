@@ -13,7 +13,7 @@
       bs_gl_journals_aggregation.hier1_name,bs_gl_journals_aggregation.hier_name,dim_date.fiscal_year]
     pivots: [dim_date.fiscal_year]
     filters:
-      bs_gl_journals_aggregation.fiscal_year: not 0
+      bs_gl_journals_aggregation.fiscal_year:
     sorts: [bs_gl_journals_aggregation.hier5_name, bs_gl_journals_aggregation.hier4_name,
       bs_gl_journals_aggregation.hier3_name,bs_gl_journals_aggregation.hier2_name, bs_gl_journals_aggregation.hier1_name,
       bs_gl_journals_aggregation.hier_name,bs_gl_journals_aggregation.Net_Amt desc
