@@ -10,11 +10,11 @@
     explore: pnl_gl_journals_aggregation
     type: table
     fields: [pnl_gl_journals_aggregation.hier3_name, pnl_gl_journals_aggregation.hier2_name, pnl_gl_journals_aggregation.hier_name,
-      pnl_gl_journals_aggregation.NetAmount, pnl_gl_journals_aggregation.fiscal_year]
+      pnl_gl_journals_aggregation.net_amount, pnl_gl_journals_aggregation.fiscal_year]
     pivots: [pnl_gl_journals_aggregation.fiscal_year]
     filters:
       pnl_gl_journals_aggregation.fiscal_year: '2015,2016,2017,2018,2019,2020'
-    sorts: [pnl_gl_journals_aggregation.NetAmount desc 0, pnl_gl_journals_aggregation.fiscal_year]
+    sorts: [pnl_gl_journals_aggregation.net_amount desc 0, pnl_gl_journals_aggregation.fiscal_year]
     limit: 500
     query_timezone: America/Los_Angeles
     show_view_names: false
@@ -28,7 +28,7 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     series_labels:
-      pnl_gl_journals_aggregation.NetAmount: Net Amount
+      pnl_gl_journals_aggregation.NetAmount: net_amount
     conditional_formatting: [{type: along a scale..., value: !!null '', background_color: "#3EB0D5",
         font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
           palette_id: 1e4d66b9-f066-4c33-b0b7-cc10b4810688, options: {constraints: {
