@@ -6,7 +6,7 @@
   elements:
   - title: P&L Statement Drill down
     name: P&L Statement Drill down
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: pnl_gl_journals_aggregation
     type: table
     fields: [pnl_gl_journals_aggregation.hier3_name, pnl_gl_journals_aggregation.hier2_name, pnl_gl_journals_aggregation.hier_name,
