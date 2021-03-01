@@ -40,4 +40,8 @@ explore: fact_gljournals {
     relationship: many_to_one
     sql_on: ${fact_gljournals.d_dept_key} = ${dim_department.d_dept_key} ;;
   }
+
 }
+explore: pnl_gl_journals_aggregation {}
+
+explore: bs_gl_journals_aggregation {}
