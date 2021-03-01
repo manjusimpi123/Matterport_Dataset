@@ -1,10 +1,5 @@
 - dashboard: infofiscus_balance_sheet
-
-
   tile_size: 100
-
-
-
   layout: newspaper
   preferred_viewer: dashboards
   elements:
@@ -14,13 +9,14 @@
     explore: bs_gl_journals_aggregation
     type: looker_grid
     fields: [bs_gl_journals_aggregation.Net_Amt, bs_gl_journals_aggregation.hier5_name,
-      bs_gl_journals_aggregation.hier4_name, bs_gl_journals_aggregation.hier_name,
-      dim_date.fiscal_year]
+      bs_gl_journals_aggregation.hier4_name, bs_gl_journals_aggregation.hier3_name,bs_gl_journals_aggregation.hier2_name,
+      bs_gl_journals_aggregation.hier1_name,bs_gl_journals_aggregation.hier_name,dim_date.fiscal_year]
     pivots: [dim_date.fiscal_year]
     filters:
       bs_gl_journals_aggregation.fiscal_year: not 0
     sorts: [bs_gl_journals_aggregation.hier5_name, bs_gl_journals_aggregation.hier4_name,
-      bs_gl_journals_aggregation.hier_name, bs_gl_journals_aggregation.Net_Amt desc
+      bs_gl_journals_aggregation.hier3_name,bs_gl_journals_aggregation.hier2_name, bs_gl_journals_aggregation.hier1_name,
+      bs_gl_journals_aggregation.hier_name,bs_gl_journals_aggregation.Net_Amt desc
         0, dim_date.fiscal_year]
     subtotals: [bs_gl_journals_aggregation.hier5_name, bs_gl_journals_aggregation.hier4_name]
     limit: 500
