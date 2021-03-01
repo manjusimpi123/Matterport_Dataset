@@ -1,4 +1,4 @@
-view: accountcategories {
+view: account_categories {
 
     sql_table_name: "FINANCE"."DIM_ACCOUNTCATEGORIES"
       ;;

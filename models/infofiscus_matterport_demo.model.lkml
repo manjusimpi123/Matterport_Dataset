@@ -56,10 +56,10 @@ explore:fact_plan {
     sql_on: ${fact_plan.account_code_key} = ${dim_account.d_account_key} ;;
   }
 
-  join: accountcategories {
+  join: account_categories {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${fact_plan.accountcategories_key} = ${accountcategories.d_accountcategories_key} ;;
+    sql_on: ${fact_plan.accountcategories_key} = ${account_categories.d_accountcategories_key} ;;
   }
 
   join: dim_date {
