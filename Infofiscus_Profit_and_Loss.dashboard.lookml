@@ -14,7 +14,7 @@
       pnl_gl_journals_aggregation.net_amount, pnl_gl_journals_aggregation.fiscal_year]
     pivots: [pnl_gl_journals_aggregation.fiscal_year]
     filters:
-      pnl_gl_journals_aggregation.fiscal_year: '2020'
+      pnl_gl_journals_aggregation.fiscal_year: ['1972,''2020']
     sorts: [pnl_gl_journals_aggregation.net_amount desc 0, pnl_gl_journals_aggregation.fiscal_year]
     limit: 500
     query_timezone: America/Los_Angeles
