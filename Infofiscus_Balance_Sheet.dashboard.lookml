@@ -20,7 +20,7 @@
         0, dim_date.fiscal_year]
     subtotals: [bs_gl_journals_aggregation.hier5_name,
     bs_gl_journals_aggregation.hier4_name,bs_gl_journals_aggregation.hier3_name, bs_gl_journals_aggregation.hier2_name,
-    bs_gl_journals_aggregation.hier1_name, bs_gl_journals_aggregation.hier_name]
+    bs_gl_journals_aggregation.hier1_name]
     limit: 500
     total: true
     query_timezone: America/Los_Angeles
