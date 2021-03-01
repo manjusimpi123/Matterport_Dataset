@@ -29,6 +29,11 @@ explore: fact_gljournals {
     relationship: many_to_one
     sql_on: ${fact_gljournals.posted_date_key} = ${dim_date.date_pkey} ;;
   }
+  join:  dim_entity{
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${fact_gljournals.d_entity_key} = ${dim_entity.d_entity_key} ;;
+  }
 
   join:dim_department  {
     type:left_outer
