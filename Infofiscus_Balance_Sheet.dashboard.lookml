@@ -4,7 +4,7 @@
   tile_size: 100
 
 
-  title: Balance Sheet
+
   layout: newspaper
   preferred_viewer: dashboards
   elements:
