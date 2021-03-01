@@ -1,8 +1,5 @@
 - dashboard: infofiscus_profit_and_loss
-
-
   tile_size: 100
-
   title: P&L Statement 2
   layout: newspaper
   preferred_viewer: dashboards
@@ -16,7 +13,7 @@
       pnl_gl_journals_aggregation.NetAmount, pnl_gl_journals_aggregation.fiscal_year]
     pivots: [pnl_gl_journals_aggregation.fiscal_year]
     filters:
-      pnl_gl_journals_aggregation.fiscal_year: '2015,2016,2017'
+      pnl_gl_journals_aggregation.fiscal_year: '2015,2016,2017,2018,2019,2020'
     sorts: [pnl_gl_journals_aggregation.NetAmount desc 0, pnl_gl_journals_aggregation.fiscal_year]
     limit: 500
     query_timezone: America/Los_Angeles
