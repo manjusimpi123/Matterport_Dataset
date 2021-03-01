@@ -9,11 +9,12 @@
     model: infofiscus_matterport_demo
     explore: pnl_gl_journals_aggregation
     type: table
-    fields: [pnl_gl_journals_aggregation.hier3_name, pnl_gl_journals_aggregation.hier2_name, pnl_gl_journals_aggregation.hier_name,
+    fields: [pnl_gl_journals_aggregation.hier4_name, pnl_gl_journals_aggregation.hier3_name,pnl_gl_journals_aggregation.hier2_name,
+    pnl_gl_journals_aggregation.hier1_name,pnl_gl_journals_aggregation.hier_name,
       pnl_gl_journals_aggregation.net_amount, pnl_gl_journals_aggregation.fiscal_year]
     pivots: [pnl_gl_journals_aggregation.fiscal_year]
     filters:
-      pnl_gl_journals_aggregation.fiscal_year: '2015,2016,2017,2018,2019,2020'
+      pnl_gl_journals_aggregation.fiscal_year: '2020'
     sorts: [pnl_gl_journals_aggregation.net_amount desc 0, pnl_gl_journals_aggregation.fiscal_year]
     limit: 500
     query_timezone: America/Los_Angeles
