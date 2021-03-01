@@ -5,7 +5,7 @@
   elements:
   - name: Balance Sheet
     title: Balance Sheet
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: looker_grid
     fields: [bs_gl_journals_aggregation.Net_Amt, bs_gl_journals_aggregation.hier5_name,

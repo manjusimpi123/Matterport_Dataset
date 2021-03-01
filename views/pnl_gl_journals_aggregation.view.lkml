@@ -72,8 +72,8 @@ view: pnl_gl_journals_aggregation {
     sql: ${TABLE}."KEY_ID" ;;
   }
 
-  dimension: net_amount {
-    type: number
+  measure: net_amount {
+    type: sum
     sql: ${TABLE}."NET_AMOUNT" ;;
   }
 
