@@ -241,7 +241,7 @@
       series_types: {}
       value_labels: legend
       label_type: labPer
-    - model: infofiscus-income-expenses
+    - model: infoficus_matterport_demo
       explore: fact_plan
       type: table
       fields: [dim_date.fiscal_year, fact_plan.Budget]
