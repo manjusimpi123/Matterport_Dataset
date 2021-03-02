@@ -140,14 +140,7 @@ view: bs_gl_journals_aggregation {
       THEN ${net_amount}
       END;;
   }
-  dimension: Dim_Net_Amt  {
-    type:number
-    sql:
-      case when ${net_amount}<0
-      THEN ${net_amount}*-1
-      else ${net_amount}
-      END;;
-  }
+
   dimension:Dim_Current_Liabilities
   {
     type:number
@@ -206,10 +199,7 @@ view: bs_gl_journals_aggregation {
       type: sum
       sql:${net_amount};;
     }
-    measure:Net_Amt{
-      type: sum
-      sql:${Dim_Net_Amt};;
-    }
+
     # ----- Sets of fields for drilling ------
     set: detail {
       fields: [
