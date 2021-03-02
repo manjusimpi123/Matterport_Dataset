@@ -12,7 +12,7 @@
       type: table
       fields: [fact_plan.Budget, dim_date.month_name]
       filters:
-        dim_date.month_name: "-Unkown"
+        dim_date.month_name:
       sorts: [dim_date.month_name]
       limit: 500
     - model: infoficus_matterport_demo
@@ -20,7 +20,7 @@
       type: looker_column
       fields: [fact_gljournals.Actuals, dim_date.month_name, fact_gljournals.gross_profit]
       filters:
-        dim_date.month_name: "-NULL,-Unkown"
+        dim_date.month_name:
       sorts: [dim_date.month_name]
       limit: 500
       x_axis_gridlines: false
@@ -115,7 +115,7 @@
       type: looker_column
       fields: [fact_gljournals.Actuals, dim_date.month_name, fact_gljournals.Net_Profit]
       filters:
-        dim_date.month_name: "-NULL,-Unkown"
+        dim_date.month_name:
       sorts: [dim_date.month_name]
       limit: 500
       x_axis_gridlines: false
