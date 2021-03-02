@@ -1,6 +1,6 @@
 - dashboard: infofiscus_budget_accuracy
-  title: Budget Accuracy
-  tile_size: 100
+
+  title: Budget Accuracy Report
   layout: newspaper
   preferred_viewer: dashboards
   elements:
@@ -13,7 +13,7 @@
       fields: [fact_gljournals.Actuals, dim_department.dept_desc, dim_account.acct_desc,
         dim_date.fiscal_year]
       filters:
-        dim_date.fiscal_year:
+        dim_date.fiscal_year: '2015,2016,2017'
       sorts: [fact_gljournals.Actuals desc]
       limit: 500
       query_timezone: America/Los_Angeles
@@ -52,7 +52,7 @@
       fields: [dim_department.dept_desc, dim_account.acct_desc, dim_date.fiscal_year,
         fact_plan.Budget]
       filters:
-        dim_date.fiscal_year:
+        dim_date.fiscal_year: '2015,2016,2017'
       sorts: [fact_plan.Budget desc]
       limit: 500
       query_timezone: America/Los_Angeles
@@ -86,8 +86,6 @@
       label_value_format: $0,"K"
       defaults_version: 1
       join_fields:
-      - field_name: dim_date.fiscal_year
-        source_field_name: dim_date.fiscal_year
       - field_name: dim_department.dept_desc
         source_field_name: dim_department.dept_desc
       - field_name: dim_account.acct_desc
