@@ -63,7 +63,7 @@ explore:fact_plan {
   }
 
   join: dim_date {
-    type: inner
+    type: left_outer
     relationship: many_to_one
     sql_on: ${fact_plan.plan_year_date_key} = ${dim_date.date_pkey} ;;
   }
