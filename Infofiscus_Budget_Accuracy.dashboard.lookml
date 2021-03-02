@@ -13,7 +13,7 @@
       fields: [fact_gljournals.Actuals, dim_department.dept_desc, dim_account.acct_desc,
         dim_date.fiscal_year]
       filters:
-        dim_date.fiscal_year: '2019,2020'
+        dim_date.fiscal_year:
       sorts: [fact_gljournals.Actuals desc]
       limit: 500
       query_timezone: America/Los_Angeles
@@ -52,7 +52,7 @@
       fields: [dim_department.dept_desc, dim_account.acct_desc, dim_date.fiscal_year,
         fact_plan.Budget]
       filters:
-        dim_date.fiscal_year: '2019,2020'
+        dim_date.fiscal_year:
       sorts: [fact_plan.Budget desc]
       limit: 500
       query_timezone: America/Los_Angeles
