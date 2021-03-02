@@ -263,6 +263,20 @@ view: fact_plan {
     sql: ${TABLE}."VERSION" ;;
   }
 
+  dimension: Dim_Budget  {
+    type:number
+    sql:
+      case when ${plan_amt1}<0
+      THEN ${plan_amt1}*-1
+      else ${plan_amt1}
+      END;;
+  }
+
+  measure: Budget {
+    type: sum
+    sql: ${Dim_Budget} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [busn_case_exp_name, plan_name, busn_case_name]
