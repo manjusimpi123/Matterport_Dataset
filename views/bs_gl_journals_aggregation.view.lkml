@@ -119,7 +119,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier5_name}='Assets'
+      case when ${hier5_name}='Asset'
       THEN ${net_amount}
       END;;
   }
