@@ -373,19 +373,19 @@ view: fact_gljournals {
   measure: expense {
     type: sum
     sql: ${dim_accountcategories.Dim_Expense} ;;
-    # value_format: "$0.00, K"
+    value_format: "$0.000,,\" M\""
   }
   measure: cost_of_goods_sold {
     type: sum
     sql: ${dim_accountcategories.Dim_cost_of_goods_sold} ;;
-    #value_format: "$0.00, K"
+    value_format: "$0.000,,\" M\""
   }
 
   measure: assets
   {
     type: sum
     sql: ${dim_accountcategories.Dim_assets} ;;
-    #value_format: "$0.00, K"
+    value_format:"$0.000,,\" M\""
   }
 
   measure: Liabilities
