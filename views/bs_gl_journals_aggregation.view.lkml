@@ -166,6 +166,7 @@ view: bs_gl_journals_aggregation {
     measure:Equity{
       type: number
       sql:${Total_Assets} - ${Total_Liabilities};;
+      value_format: "$0.000,,\" M\""
     }
     measure:Cash{
       type: sum
@@ -191,6 +192,7 @@ view: bs_gl_journals_aggregation {
     measure:Current_Liabilities{
       type: sum
       sql:${Dim_Current_Liabilities};;
+      value_format: "$0.000,,\" M\""
     }
     measure:Current_Ratio{
       type: number
