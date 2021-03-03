@@ -336,12 +336,28 @@ view: fact_gljournals {
           END;;
   }
 
-
+  dimension:Dim_Budget_multiple {
+    type:number
+    sql: ${net_amount} * 1.15 ;;
+  }
+  dimension:Dim_Budget {
+    type:number
+    sql:case when ${Dim_Budget_multiple}<0
+          THEN ${Dim_Budget_multiple}*-1
+          else ${Dim_Budget_multiple}
+          END;;
+  }
   measure: Actuals {
     type: sum
     sql: ${Dim_Actual} ;;
     # value_format: "$0.00, K"
   }
+  measure: Budget {
+    type: sum
+    sql: ${Dim_Budget} ;;
+    # value_format: "$0.00, K"
+  }
+
   measure: Operating_Expense {
     type: sum
     sql: ${dim_accountcategories.Dim_operating_expense} ;;
