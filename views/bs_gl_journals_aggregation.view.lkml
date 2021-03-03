@@ -128,7 +128,7 @@ view: bs_gl_journals_aggregation {
   {
     type:number
     sql:
-      case when ${hier2_name}='2000000 - Accounts Payable Trade'
+      case when ${hier2_name} like '%Accounts Payable%'
       THEN ${net_amount}
       END;;
   }
