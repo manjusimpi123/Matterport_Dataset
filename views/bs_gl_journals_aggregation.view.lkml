@@ -186,6 +186,7 @@ view: bs_gl_journals_aggregation {
     measure:Current_Assets{
       type: sum
       sql:${Dim_Current_Assets};;
+      value_format: "$0"
     }
     measure:Current_Liabilities{
       type: sum
