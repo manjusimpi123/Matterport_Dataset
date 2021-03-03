@@ -1,7 +1,6 @@
 - dashboard: liquidity_analysis
   title: Infofiscus Liquidity Analysis
   tile_size: 100
-- dashboard: liquid_analysis
 
   layout: newspaper
   preferred_viewer: dashboards
