@@ -1,5 +1,5 @@
 - dashboard: liquidity_analysis
-  title: Infofiscus Liquidity Analysis
+  title: Liquidity Analysis
   tile_size: 100
 
   layout: newspaper
@@ -14,7 +14,7 @@
   elements:
   - name: Cash
     title: Cash
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: marketplace_viz_multiple_value::multiple_value-marketplace
     fields: [bs_gl_journals_aggregation.Cash, dim_date.year, bs_gl_journals_aggregation.Current_Assets]
@@ -101,7 +101,7 @@
     height: 5
   - title: Account Receivable
     name: Account Receivable
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: marketplace_viz_multiple_value::multiple_value-marketplace
     fields: [bs_gl_journals_aggregation.Account_Receivable, dim_date.year, bs_gl_journals_aggregation.Equity]
@@ -190,7 +190,7 @@
     height: 5
   - title: Debt to Asset Ratio
     name: Debt to Asset Ratio
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: single_value
     fields: [bs_gl_journals_aggregation.Debt_To_Assets_Ratio, dim_date.year]
@@ -266,7 +266,7 @@
     height: 5
   - title: Account Payable
     name: Account Payable
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: marketplace_viz_multiple_value::multiple_value-marketplace
     fields: [bs_gl_journals_aggregation.Account_Payable, dim_date.year, bs_gl_journals_aggregation.Current_Liabilities]
@@ -357,7 +357,7 @@
     height: 5
   - title: Debt to Equity Ratio
     name: Debt to Equity Ratio
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: single_value
     fields: [bs_gl_journals_aggregation.Debt_To_Equity_Ratio, dim_date.year]
@@ -438,7 +438,7 @@
     height: 5
   - title: Cash and AR
     name: Cash and AR
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: looker_area
     fields: [dim_date.month_num_in_year, bs_gl_journals_aggregation.Cash, bs_gl_journals_aggregation.Account_Receivable,
@@ -503,215 +503,10 @@
     col: 0
     width: 12
     height: 7
-  - title: Top AR by Customer
-    name: Top AR by Customer
-    model: infoficus_matterport_demo
-    explore: budget_detail_analysis
-    type: table
-    fields: [budget_detail_analysis.full_name, budget_detail_analysis.Amount]
-    filters:
-      budget_detail_analysis.name: Accounts Receivable
-    sorts: [budget_detail_analysis.Amount desc]
-    limit: 500
-    query_timezone: America/Los_Angeles
-    show_view_names: false
-    show_row_numbers: false
-    truncate_column_names: false
-    hide_totals: false
-    hide_row_totals: false
-    table_theme: editable
-    limit_displayed_rows: true
-    enable_conditional_formatting: true
-    conditional_formatting_include_totals: false
-    conditional_formatting_include_nulls: false
-    color_application:
-      collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2
-      palette_id: 5d189dfc-4f46-46f3-822b-bfb0b61777b1
-      options:
-        steps: 5
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    size_by_field: ''
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows_values:
-      show_hide: show
-      first_last: first
-      num_rows: '10'
-    legend_position: center
-    font_size: '15'
-    series_types: {}
-    point_style: circle
-    series_colors: {}
-    series_point_styles: {}
-    show_value_labels: true
-    label_density: 25
-    label_color: [white]
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    conditional_formatting: [{type: along a scale..., value: !!null '', background_color: "#3EB0D5",
-        font_color: !!null '', color_application: {collection_id: b43731d5-dc87-4a8e-b807-635bef3948e7,
-          palette_id: 1ebd8493-ebcc-4e57-a4ff-ab3e6111da24, options: {steps: 2, constraints: {
-              min: {type: minimum}, mid: {type: number, value: 0}, max: {type: maximum}},
-            mirror: true, reverse: true, stepped: true}}, bold: false, italic: false,
-        strikethrough: false, fields: !!null ''}]
-    transpose: false
-    truncate_text: true
-    size_to_fit: true
-    header_text_alignment: left
-    header_font_size: '12'
-    rows_font_size: '12'
-    show_sql_query_menu_options: false
-    show_totals: true
-    show_row_totals: true
-    defaults_version: 1
-    series_column_widths:
-      budget_detail_analysis.full_name: 492
-    listen: {}
-    row: 5
-    col: 12
-    width: 12
-    height: 7
-  - title: AR by Company
-    name: AR by Company
-    model: infoficus_matterport_demo
-    explore: fact_gljournals
-    type: looker_column
-    fields: [dim_entity.entity_desc, fact_gljournals.Net_amount, dim_date.year]
-    filters:
-      dim_account.acct_desc: Accounts Receivable
-    sorts: [fact_gljournals.Net_amount desc]
-    limit: 500
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    color_application:
-      collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2
-      palette_id: 5d189dfc-4f46-46f3-822b-bfb0b61777b1
-      options:
-        steps: 5
-    y_axes: [{label: '', orientation: left, series: [{axisId: fact_gljournals.Net_amount,
-            id: fact_gljournals.Net_amount, name: Net Amount}], showLabels: false,
-        showValues: true, valueFormat: '0, "M"', unpinAxis: false, tickDensity: default,
-        tickDensityCustom: 5, type: linear}]
-    font_size: '15'
-    label_value_format: $#,##0, "K"
-    series_types: {}
-    series_colors:
-      fact_gljournals.Net_amount: "#E8710A"
-    series_labels: {}
-    label_color: [white]
-    column_spacing_ratio: 0.8
-    font_size_main: ''
-    orientation: vertical
-    show_title_dim_entity.entity_desc: false
-    defaults_version: 1
-    hidden_fields: [dim_date.year]
-    hidden_points_if_no: []
-    listen:
-      Year: dim_date.year
-    row: 12
-    col: 0
-    width: 6
-    height: 8
-  - title: AP by Company
-    name: AP by Company
-    model: infoficus_matterport_demo
-    explore: fact_gljournals
-    type: looker_column
-    fields: [dim_entity.entity_desc, fact_gljournals.Net_amount, dim_date.year]
-    filters:
-      dim_account.acct_desc: Accounts Payable
-    sorts: [fact_gljournals.Net_amount desc]
-    limit: 500
-    query_timezone: America/Los_Angeles
-    x_axis_gridlines: false
-    y_axis_gridlines: false
-    show_view_names: false
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: false
-    show_x_axis_ticks: true
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    plot_size_by_field: false
-    trellis: ''
-    stacking: ''
-    limit_displayed_rows: false
-    legend_position: center
-    point_style: none
-    show_value_labels: true
-    label_density: 25
-    x_axis_scale: auto
-    y_axis_combined: true
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    y_axes: [{label: '', orientation: left, series: [{axisId: fact_gljournals.Net_amount,
-            id: fact_gljournals.Net_amount, name: Net Amount}], showLabels: false,
-        showValues: true, valueFormat: '0, "M"', unpinAxis: false, tickDensity: default,
-        tickDensityCustom: 5, type: linear}]
-    label_value_format: $#,##0,"K"
-    series_colors:
-      fact_gljournals.Net_amount: "#E57947"
-    label_color: [white]
-    column_spacing_ratio: 0.8
-    defaults_version: 1
-    hidden_fields: [dim_date.year]
-    listen:
-      Year: dim_date.year
-    row: 12
-    col: 6
-    width: 6
-    height: 8
+
   - title: Account Receivable and Account Payable
     name: Account Receivable and Account Payable
-    model: infoficus_matterport_demo
+    model: infofiscus_matterport_demo
     explore: bs_gl_journals_aggregation
     type: looker_line
     fields: [dim_date.month_name, dim_date.month_num_in_year, bs_gl_journals_aggregation.Account_Payable,
