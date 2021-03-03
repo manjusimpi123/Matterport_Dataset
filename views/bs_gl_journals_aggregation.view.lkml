@@ -159,6 +159,7 @@ view: bs_gl_journals_aggregation {
     measure:Total_Assets{
       type: sum
       sql:${Dim_Total_Assets};;
+      value_format: "$0.000,,\" M\""
     }
     measure:Debt_To_Assets_Ratio{
       type: number
