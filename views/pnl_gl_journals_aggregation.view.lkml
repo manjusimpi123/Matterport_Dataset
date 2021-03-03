@@ -72,8 +72,8 @@ view: pnl_gl_journals_aggregation {
     sql: ${TABLE}."KEY_ID" ;;
   }
 
-  measure: net_amount {
-    type: sum
+  dimension: net_amount {
+    type: number
     sql: ${TABLE}."NET_AMOUNT" ;;
   }
 
@@ -86,9 +86,9 @@ view: pnl_gl_journals_aggregation {
   set: detail {
     fields: [
       hier5_name,
+      hier3_name,
       hier_name,
       hier2_name,
-      hier3_name,
       hier4_name,
       hier1_name
     ]

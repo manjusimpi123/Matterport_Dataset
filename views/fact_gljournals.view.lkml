@@ -350,12 +350,12 @@ view: fact_gljournals {
   measure: Actuals {
     type: sum
     sql: ${Dim_Actual} ;;
-    # value_format: "$0.00, K"
+     value_format: "$0.000,,\" M\""
   }
   measure: Budget {
     type: sum
     sql: ${Dim_Budget} ;;
-    # value_format: "$0.00, K"
+     value_format: "$0.000,,\" M\""
   }
 
   measure: Operating_Expense {
