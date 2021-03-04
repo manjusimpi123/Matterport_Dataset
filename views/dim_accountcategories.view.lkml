@@ -30,7 +30,7 @@ view: dim_accountcategories {
   dimension: Dim_Revenue{
     type:number
     sql:
-       CASE WHEN ${account_category}='Sales' or  ${account_category}= 'Other Income'
+       CASE WHEN ${account_category}='Sales'
        THEN ${fact_gljournals.net_amount}
        END ;;
   }
@@ -43,7 +43,7 @@ view: dim_accountcategories {
   dimension: Dim_Expense{
     type:number
     sql:
-      case when ${account_category}='Other Expense' or  ${account_category}='Operational Expenses'
+      case when ${account_category}='Operational Expenses'
       THEN ${fact_gljournals.net_amount} END;;
   }
 
