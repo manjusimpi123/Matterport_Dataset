@@ -36,6 +36,11 @@ view: fact_gljournals {
     type: string
     sql: ${TABLE}."ATTR5_TEXT" ;;
   }
+  dimension: Attr_date {
+    type: date
+    sql: cast (${attr5_text}.e as Date) ;;
+  }
+
 
   dimension: company_code {
     type: number
@@ -111,6 +116,7 @@ view: fact_gljournals {
     datatype: date
     sql: ${TABLE}."EXCHANGE_DATE" ;;
   }
+
 
   dimension: exchange_rate {
     type: number
