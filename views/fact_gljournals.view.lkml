@@ -36,10 +36,7 @@ view: fact_gljournals {
     type: string
     sql: ${TABLE}."ATTR5_TEXT" ;;
   }
-  dimension: Attr_date {
-    type: date
-    sql: cast (${attr5_text}.e as Date) ;;
-  }
+
 
 
   dimension: company_code {
@@ -372,7 +369,7 @@ view: fact_gljournals {
   measure: Revenue {
     type: sum
     sql: ${dim_accountcategories.Dim_Revenue};;
-
+    value_format: "$0.000,,\" M\""
     #value_format: "0.000"
 
   }
