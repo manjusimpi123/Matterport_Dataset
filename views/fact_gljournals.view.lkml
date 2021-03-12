@@ -440,7 +440,14 @@ view: fact_gljournals {
     type: number
     sql: ${Net_Profit} / ${Revenue} * 100;;
   }
-
+  measure: Current_Assets {
+    type: sum
+    sql: ${dim_accountcategories.Dim_Current_Assets} ;;
+  }
+  measure: Current_Liabilties {
+    type: sum
+    sql: ${dim_accountcategories.Dim_Current_Liabilities} ;;
+  }
   measure:Net_amount
   {
     type: sum
@@ -449,7 +456,7 @@ view: fact_gljournals {
   measure:net_working_capital
   {
     type: number
-    sql: ${assets} - ${Liabilities};;
+    sql:  ${Current_Assets} - ${Current_Liabilties};;
   }
 
 }

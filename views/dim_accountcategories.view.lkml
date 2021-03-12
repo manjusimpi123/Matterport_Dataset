@@ -60,6 +60,30 @@ view: dim_accountcategories {
       case when ${category_type}='Asset'
       THEN ${fact_gljournals.net_amount} END;;
   }
+  dimension: Dim_Current_Liabilities{
+    type:number
+    sql:
+      case when ${account_category}='Account Payables' or
+      ${account_category} = 'Credit cards' or
+      ${account_category} = 'State Taxes Payable' or
+      ${account_category} = 'Accrued Payroll Liabilities' or
+      ${account_category} = 'Accrued Liabilities' or
+      ${account_category} = 'Other Current Liabilities' or
+      ${account_category} = 'Deferred Revenue'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+  dimension: Dim_Current_Assets{
+    type:number
+    sql:
+      case when ${account_category}='Cash and Equivalents' or
+      ${account_category} = 'Accounts Receivable' or
+      ${account_category} = 'InterCo AR' or
+      ${account_category} = 'Prepaid Expense' or
+      ${account_category} = 'Inventory' or
+      ${account_category} = 'Other Current Assets'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+
 
   dimension: Dim_Liabilities{
     type:number
