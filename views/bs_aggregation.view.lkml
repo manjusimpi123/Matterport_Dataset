@@ -12,6 +12,23 @@ view: bs_aggregation {
     sql: ${TABLE}."ACCOUNT_CATEGORY" ;;
   }
 
+  measure: Current_Assets {
+    type: sum
+    sql: CASE WHEN ${TABLE}."ACCOUNT_CATEGORY"='Current Assets'
+    THEN ${TABLE}."ENDING_BALANCE" ;;
+  }
+
+  measure: Current_Liabilities {
+    type: sum
+    sql: CASE WHEN ${TABLE}."ACCOUNT_CATEGORY"='Current Liabilities'
+      THEN ${TABLE}."ENDING_BALANCE" ;;
+  }
+
+  measure: Working_Capital {
+    type: number
+    sql: ${Current_Assets}-${Current_Liabilities} ;;
+  }
+
   dimension: account_desc {
     type: string
     sql: ${TABLE}."ACCOUNT_DESC" ;;
