@@ -37,6 +37,11 @@ view: fact_gljournals {
     sql: ${TABLE}."ATTR5_TEXT" ;;
   }
 
+  dimension: gl_date {
+    type: date
+    sql: substr(${TABLE}."ATTR5_TEXT",5,4);;
+  }
+
 
 
   dimension: company_code {
