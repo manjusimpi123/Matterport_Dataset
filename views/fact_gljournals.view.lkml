@@ -276,7 +276,7 @@ view: fact_gljournals {
 
   dimension: posted_date_key {
     type: number
-    sql: substring(${TABLE}."POSTED_DATE_KEY",1,4) ;;
+    sql: ${TABLE}."POSTED_DATE_KEY" ;;
   }
 
   dimension: reference {
