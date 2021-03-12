@@ -14,14 +14,25 @@ view: bs_aggregation {
 
   measure: Current_Assets {
     type: sum
-    sql: CASE WHEN ${TABLE}."ACCOUNT_CATEGORY"='Current Assets'
-    THEN ${TABLE}."ENDING_BALANCE" ;;
+    sql: CASE WHEN ${account_category}='Current Assets'
+    THEN ${ending_balance} end  ;;
   }
 
   measure: Current_Liabilities {
     type: sum
-    sql: CASE WHEN ${TABLE}."ACCOUNT_CATEGORY"='Current Liabilities'
-      THEN ${TABLE}."ENDING_BALANCE" ;;
+    sql: CASE WHEN ${account_category}='Current Liabilities'
+      THEN ${ending_balance} end;;
+  }
+  measure: Total_Liabilities {
+    type: sum
+    sql: CASE WHEN ${account_category}='Current Liabilities' or ${account_category}='Long Term Liabilities'
+      THEN ${ending_balance} end  ;;
+  }
+
+  measure: Total_Equity {
+    type: sum
+    sql: CASE WHEN ${account_category}='Equity'
+      THEN ${ending_balance} end;;
   }
 
   measure: Working_Capital {
