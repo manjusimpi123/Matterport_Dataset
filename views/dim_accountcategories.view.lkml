@@ -93,6 +93,18 @@ view: dim_accountcategories {
       END;;
   }
 
+  dimension: Other_Income{
+    type: number
+    sql: case when ${account_category}='Other Income'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+
+  dimension: Other_Expense{
+    type: number
+    sql: case when ${account_category}='Other Expense'
+      THEN ${fact_gljournals.net_amount} END;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
