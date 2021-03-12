@@ -34,26 +34,8 @@ view: fact_gljournals {
 
   dimension: attr5_text {
     type: string
-    sql:substring(to_date(${TABLE}."ATTR5_TEXT"), 5, 4);;
+    sql: ${TABLE}."ATTR5_TEXT";;
   }
-
-
-    dimension_group: gl_date {
-      type: time
-      timeframes: [
-        raw,
-        date,
-        week,
-        month,
-        quarter,
-        year
-      ]
-      convert_tz: no
-      datatype: date
-    sql: substring(to_date(${TABLE}."ATTR5_TEXT"), 5, 4);;
-  }
-
-
 
   dimension: company_code {
     type: number
@@ -294,7 +276,7 @@ view: fact_gljournals {
 
   dimension: posted_date_key {
     type: number
-    sql: ${TABLE}."POSTED_DATE_KEY" ;;
+    sql: substring(${TABLE}."POSTED_DATE_KEY",1,4) ;;
   }
 
   dimension: reference {
