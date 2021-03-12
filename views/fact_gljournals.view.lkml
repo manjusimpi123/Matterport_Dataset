@@ -39,7 +39,7 @@ view: fact_gljournals {
 
   dimension: gl_date {
     type: date
-    sql: substr(${TABLE}."ATTR5_TEXT",5,4);;
+    sql: substring(${TABLE}."ATTR5_TEXT", 5, 4);;
   }
 
 
