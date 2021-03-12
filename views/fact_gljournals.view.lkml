@@ -37,9 +37,20 @@ view: fact_gljournals {
     sql: ${TABLE}."ATTR5_TEXT" ;;
   }
 
-  dimension: gl_date {
-    type: date
-    sql: substring(${TABLE}."ATTR5_TEXT", 5, 4);;
+
+    dimension_group: gl_date {
+      type: time
+      timeframes: [
+        raw,
+        date,
+        week,
+        month,
+        quarter,
+        year
+      ]
+      convert_tz: no
+      datatype: date
+    sql: substring(to_date(${TABLE}."ATTR5_TEXT"), 5, 4);;
   }
 
 
