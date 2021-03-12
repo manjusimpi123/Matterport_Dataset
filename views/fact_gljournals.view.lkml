@@ -457,4 +457,10 @@ view: fact_gljournals {
     sql:  ${Current_Assets} - ${Current_Liabilties};;
   }
 
+  measure: Gross_Margin {
+    type: number
+    sql: ${gross_profit} / ${Revenue} * 100  ;;
+
+  }
+
 }
