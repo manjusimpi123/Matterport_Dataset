@@ -376,6 +376,19 @@ view: fact_gljournals {
     sql: ${dim_accountcategories.Dim_Expense} ;;
     value_format: "$0.000,,\" M\""
   }
+
+  measure: other_expense {
+    type: sum
+    sql: ${dim_accountcategories.Other_Expense} ;;
+    value_format: "$0.000,,\" M\""
+  }
+
+  measure: other_income {
+    type: sum
+    sql: ${dim_accountcategories.Other_Income} ;;
+    value_format: "$0.000,,\" M\""
+  }
+
   measure: cost_of_goods_sold {
     type: sum
     sql: ${dim_accountcategories.Dim_cost_of_goods_sold} ;;
