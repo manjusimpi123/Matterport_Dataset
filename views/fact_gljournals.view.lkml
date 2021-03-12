@@ -34,7 +34,7 @@ view: fact_gljournals {
 
   dimension: attr5_text {
     type: string
-    sql: ${TABLE}."ATTR5_TEXT" ;;
+    sql:substring(to_date(${TABLE}."ATTR5_TEXT"), 5, 4);;
   }
 
 
