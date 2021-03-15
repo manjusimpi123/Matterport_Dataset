@@ -380,13 +380,13 @@ view: fact_gljournals {
   measure: other_expense {
     type: sum
     sql: ${dim_accountcategories.Other_Expense} ;;
-    value_format: "$0.000,,\" M\""
+    value_format: "$0.00, K"
   }
 
   measure: other_income {
     type: sum
     sql: ${dim_accountcategories.Other_Income} ;;
-    value_format: "$0.000,,\" M\""
+    value_format: "$0.00, K"
   }
 
   measure: cost_of_goods_sold {
@@ -475,5 +475,11 @@ view: fact_gljournals {
     sql: ${gross_profit} / ${Revenue} * 100  ;;
 
   }
+  measure: Net_Ordinary_Income{
+    type: number
+    sql:  ${gross_profit} + ${expense}   * 100  ;;
+
+  }
+
 
 }
