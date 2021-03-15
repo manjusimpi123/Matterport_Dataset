@@ -78,4 +78,4 @@ explore:fact_plan {
 
 explore: pnl_gl_journals_aggregation {}
 
-explore: bs_aggregation {}
+explore: agg_balancesheet {}
