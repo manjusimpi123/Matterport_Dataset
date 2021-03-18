@@ -2,47 +2,48 @@ view: agg_balancesheet {
   sql_table_name: "FINANCE"."AGG_BALANCESHEET"
     ;;
 
-  dimension: account {
-    type: string
-    sql: ${TABLE}."ACCOUNT" ;;
-  }
-
   dimension: account_category {
     type: string
     sql: ${TABLE}."ACCOUNT_CATEGORY" ;;
   }
-  measure: Current_Assets {
-    type: sum
-    sql: CASE WHEN ${account_category}='Current Assets'
-      THEN ${ending_balance} end  ;;
-  }
-
-  measure: Current_Liabilities {
-    type: sum
-    sql: CASE WHEN ${account_category}='Current Liabilities'
-      THEN ${ending_balance} end;;
-  }
-  measure: Total_Liabilities {
-    type: sum
-    sql: CASE WHEN ${account_category}='Current Liabilities' or ${account_category}='Long Term Liabilities'
-      THEN ${ending_balance} end  ;;
-  }
-
-  measure: Total_Equity {
-    type: sum
-    sql: CASE WHEN ${account_category}='Equity'
-      THEN ${ending_balance} end;;
-  }
-
-  measure: Working_Capital {
-    type: number
-    sql: ${Current_Assets}-${Current_Liabilities} ;;
-    }
 
   dimension: account_desc {
     type: string
     sql: ${TABLE}."ACCOUNT_DESC" ;;
   }
+  measure: Current_Assets {
+    type: sum
+    sql: CASE WHEN ${account_subcategory}='Current Assets'
+      THEN ${ending_balance} end  ;;
+    value_format: "0.000,,\" M\""
+  }
+
+  measure: Current_Liabilities {
+    type: sum
+    sql: CASE WHEN ${account_subcategory}='Current Liabilities'
+      THEN ${ending_balance} end;;
+    value_format: "0.000,,\" M\""
+  }
+  measure: Total_Liabilities {
+    type: sum
+    sql: CASE WHEN ${account_subcategory}='Current Liabilities' or ${account_subcategory}='Long Term Liabilities'
+      THEN ${ending_balance} end  ;;
+    value_format: "0.000,,\" M\""
+  }
+
+  measure: Total_Equity {
+    type: sum
+    sql: CASE WHEN ${account_subcategory}='Equity'
+      THEN ${ending_balance} end;;
+    value_format: "0.000,,\" M\""
+  }
+
+  measure: Working_Capital {
+    type: number
+    sql: ${Current_Assets}-${Current_Liabilities} ;;
+    value_format: "0,\" K\""
+  }
+
 
   dimension: account_name {
     type: string
@@ -54,9 +55,14 @@ view: agg_balancesheet {
     sql: ${TABLE}."ACCOUNT_NUMBER" ;;
   }
 
-  dimension: account_subcategories {
+  dimension: account_subcategory {
     type: string
-    sql: ${TABLE}."ACCOUNT_SUBCATEGORIES" ;;
+    sql: ${TABLE}."ACCOUNT_SUBCATEGORY" ;;
+  }
+
+  dimension: account_title {
+    type: string
+    sql: ${TABLE}."ACCOUNT_TITLE" ;;
   }
 
   dimension: amount {

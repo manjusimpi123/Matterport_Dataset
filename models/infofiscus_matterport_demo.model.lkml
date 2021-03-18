@@ -79,3 +79,5 @@ explore:fact_plan {
 explore: pnl_gl_journals_aggregation {}
 
 explore: agg_balancesheet {}
+
+explore: agg_trial_balance {}
