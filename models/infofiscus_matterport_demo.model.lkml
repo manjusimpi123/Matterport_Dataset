@@ -81,3 +81,27 @@ explore: pnl_gl_journals_aggregation {}
 explore: agg_balancesheet {}
 
 explore: agg_trial_balance {}
+
+explore:fact_gl_invoice {
+  label: "Account Receivable"
+  join: dim_account {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${fact_gl_invoice.d_account_key}  = ${dim_account.d_account_key} ;;
+  }
+  join: dim_currencies {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${fact_gl_invoice.d_currency_key} = ${dim_currencies.d_currency_key} ;;
+  }
+  join:dim_entity  {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${fact_gl_invoice.d_entity_key} = ${dim_entity.d_entity_key};;
+  }
+  join:stg_gl_invoice  {
+    type: left_outer
+    relationship:many_to_one
+    sql_on: ${fact_gl_invoice.dw_key_id} = ${stg_gl_invoice.dw_key_id};;
+  }
+}

@@ -380,13 +380,13 @@ view: fact_gljournals {
   measure: other_expense {
     type: sum
     sql: ${dim_accountcategories.Other_Expense} ;;
-    value_format: "$0.00, K"
+    value_format: "$0.00,k"
   }
 
   measure: other_income {
     type: sum
     sql: ${dim_accountcategories.Other_Income} ;;
-    value_format: "$0.00, K"
+    value_format: "$0.00,k"
   }
 
   measure: cost_of_goods_sold {
