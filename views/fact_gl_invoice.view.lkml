@@ -90,16 +90,19 @@ view: fact_gl_invoice {
     type: date
     sql: ${due_date} ;;
   }
+  dimension:now {
+    type: date
+    sql: now() ;;
+  }
 
   dimension: OverdueInvoicesnotcleared  {
     type: number
-    sql: case when ${inv_status} = 'Open' and ${duedate} < now() then ${inv_tranid} end ;;
+    sql: case when ${inv_status} = 'Open' and ${duedate} < ${now} then ${inv_tranid} end ;;
   }
 
   measure: Overdue_Invoices_not_cleared  {
     type: count_distinct
-    sql: ${OverdueInvoicesnotcleared} ;;
-  }
+   sql: ${OverdueInvoicesnotcleared} ;; }
 
   dimension: dw_key_id {
     type: string
