@@ -202,6 +202,10 @@ view: fact_gl_invoice {
     ]
     sql: ${TABLE}."TRANDATE" ;;
   }
+  dimension: TranDate {
+    type: date
+    sql: ${trandate_date} ;;
+  }
 
   dimension: transaction_id {
     type: number
